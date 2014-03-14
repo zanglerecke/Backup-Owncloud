@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #load config file
-if [ -s "/etc/default/backup-owncloud" ] ; then
+if [ -s "/etc/default/Backup-Owncloud" ] ; then
 . /etc/default/backup-owncloud
 fi
 
@@ -16,7 +16,7 @@ rsync -Aax $Source  ${Target}owncloud-dir-bkp_${DATE}/
 # -a archiv mode
 # -x do not cross filesystem boundaries
 
-mysqldump --lock-tables -h $DBServer $DBName -u $DBUser --password=$DBPass > ${Target}owncloud-sql-bkp_${DATE}.bak
+mysqldump --lock-tables -h $DBServer $DBName -u $DBUser --password=$DBPass > ${Target}owncloud-dir-bkp_${DATE}/owncloud-sql-bkp_${DATE}.bak
 echo "Backup Successfull!"
 fi
 
@@ -26,8 +26,9 @@ if ( [ $OPTION = "update" ] ); then
  echo "Backupsource: "$Source
  echo "Backuptarget: "$Target
 
-echo rsync -Aax $Source  ${Target}owncloud-dir-bkp/
-echo mysqldump --lock-tables -h $DBServer $DBName -u $DBUser --password=$DBPass > ${Target}owncloud-sql-bkp.bak
+rsync -Aax $Source  ${Target}owncloud-dir-bkp/
+mysqldump --lock-tables -h $DBServer $DBName -u $DBUser --password=$DBPass > ${Target}owncloud-dir-bkp/owncloud-sql-bkp.bak
+
 echo "Backup Successfull!"
 fi
 
