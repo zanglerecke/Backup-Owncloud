@@ -2,7 +2,7 @@
 
 #load config file
 if [ -s "/etc/default/Backup-Owncloud" ] ; then
-. /etc/default/backup-owncloud
+. /etc/default/Backup-Owncloud
 fi
 
 if ( [ "$OPTION" = "DATE" ] ); then
