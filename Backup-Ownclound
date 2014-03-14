@@ -1,0 +1,10 @@
+
+#OPTION=update
+OPTION=DATE
+DATE=`date +"%Y%m%d"`
+Source="/web/owncloud/"
+Target="/Owncloud-Backups/"
+DBServer="127.0.0.1"
+DBName=OwnCloud
+DBUser=
+DBPass=
