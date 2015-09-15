@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 #load config file
