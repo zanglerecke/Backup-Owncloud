@@ -1,10 +1,12 @@
 
-#OPTION=update
-OPTION=DATE
-DATE=`date +"%Y%m%d"`
-Source="/web/owncloud/"
-Target="/Owncloud-Backups/"
+# owncloud data folder: 
+Source="/OWNCLOUD_DATA/"
+
+# owncloud database backup filename:
+Target="/OWNCLOUD_DATA/owncloud-sql-bkp.bak"
+
+# database server informations:
 DBServer="127.0.0.1"
 DBName=OwnCloud
 DBUser=
-DBPass=
+DBPass='.......'
